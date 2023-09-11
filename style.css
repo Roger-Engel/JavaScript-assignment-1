@@ -1,0 +1,382 @@
+body {
+    margin: 0;
+    font-family: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", sans-serif;
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+table {
+    margin-left: 500px;
+    margin-right: 500px;
+}
+
+.form-container {
+    border: 3px solid black;
+    background-color: white;
+    border-radius: 10px;
+    margin-left: 500px;
+    margin-right: 500px;
+}
+
+.name-data {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    justify-content: center;
+    font-weight: 760;
+}
+
+.adress-data {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    justify-content: center;
+    font-weight: 760;
+}
+
+.adress-data2 {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    justify-content: center;
+    font-weight: 760;
+}
+
+nav {
+    display: flex;
+    justify-content: start;
+    background-color: #0000A4;
+    padding: 15px;
+}
+
+.firstName {
+    display: flex;
+    flex-direction: column;
+    margin-right: 15px;
+}
+
+.infix {
+    display: flex;
+    flex-direction: column;
+    margin-right: 15px;
+}
+
+.lastName {
+    display: flex;
+    flex-direction: column;
+}
+
+.streetName {
+    display: flex;
+    flex-direction: column;
+    margin-right: 15px;
+    margin-bottom: 1px;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+.houseNumber {
+    display: flex;
+    flex-direction: column;
+}
+
+.addition {
+    display: flex;
+    flex-direction: column;
+    margin-left: 15px;
+}
+
+.city {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+.postalcode {
+    display: flex;
+    flex-direction: column;
+    margin-right: 15px;
+}
+
+
+#firstNameInput {
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 2px solid black;
+}
+
+#additionInput {
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 2px solid black;
+}
+
+#lastNameInput {
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 2px solid black;
+}
+
+#streetNameInput {
+    background-color: #f0f6ff;
+    border: none;
+    height: 30px;
+}
+
+#houseNumberInput {
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 2px solid black;
+}
+
+#infixInput {
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 2px solid black;
+}
+
+#postalcodeInput {
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 2px solid black;
+}
+
+#cityInput {
+    background-color: #f0f6ff;
+    height: 30px;
+    border: none;
+}
+
+#btn {
+    color: white;
+    background-color: #0000ff;
+    margin-bottom: 15px;
+}
+
+.acties {
+    color: white;
+    background-color: #0000ff;
+}
+
+#addPerson {
+    height: 25px;
+    width: 25px;
+    margin-top: 22px;
+    margin-left: 10px;
+}
+
+#addPerson:hover {
+    cursor: pointer;
+}
+
+.addPersons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#logo {
+    display: flex;
+    width: 200px;
+    height: 40px;
+}
+
+input {
+    display: flex;
+}
+
+.open-button {
+    border: none;
+    cursor: pointer;
+    opacity: 0.8;
+    position: fixed;
+    background-color: none;
+    width: 0px;
+    height: 0px;
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+    margin-right: 20px;
+}
+
+/* The popup form - hidden by default */
+.form-popup {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    right: 15px;
+    z-index: 9;
+    margin-bottom: 400px;
+    margin-right: 120px;
+}
+
+/* Add styles to the form container */
+.form-container {
+    background-color: white;
+    width: 750px;
+}
+
+
+/* When the inputs get focus, do something */
+.form-container input[type=text]:focus,
+.form-container input[type=password]:focus {
+    background-color: #ddd;
+    outline: none;
+}
+
+/* Set a style for the submit/login button */
+.form-container .btn {
+    background-color: #04AA6D;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom: 10px;
+    opacity: 0.8;
+}
+
+/* Add a red background color to the cancel button */
+.form-container .cancel {
+    background-color: red;
+    width: 175px;
+    border-radius: 20px;
+    margin-left: 10px;
+}
+
+
+.form-container .submit {
+    background-color: #0000A4;
+    width: 175px;
+    border-radius: 20px;
+    margin-right: 10px;
+}
+
+button {
+    color: white;
+    border: none;
+    background: none;
+}
+
+.form-container .btn:hover,
+.open-button:hover {
+    opacity: 1;
+}
+
+#addButtonImage {
+    width: 40px;
+    height: 40px;
+}
+
+table {
+    display: flex;
+    justify-content: center;
+    margin: 150px;
+}
+
+#userlist {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.user-item {
+    border: 1px solid #ccc;
+    padding: 10px;
+    width: calc(33.33% - 7px);
+    box-sizing: border-box;
+}
+
+.addButtonImageScale {
+    display: flex;
+    justify-content: center;
+}
+
+.name-item:hover {
+    cursor: pointer;
+}
+
+.edit-button {
+    margin-right: 5px;
+}
+
+.edit-button:hover {
+    cursor: pointer;
+}
+
+.delete-button {
+    margin-left: 5px;
+}
+
+.delete-button:hover {
+    cursor: pointer;
+}
+
+#user-details {
+    border: solid;
+    border-color: black;
+    border-radius: 10px;
+    margin-left: 450px;
+    margin-right: 450px;
+    height: 235px;
+}
+
+#edit-icon {
+    width: 40px;
+    height: 40px;
+    margin-right: 20px;
+}
+
+#edit-icon:hover img.pen-hoverd {
+    opacity: 1;
+}
+
+#delete-icon {
+    width: 40px;
+    height: 40px;
+    margin-left: 20px;
+}
+
+.popupOverlay.active {
+    display: block;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+}
+
+#user-nameInfo {
+    font-weight: 1000px;
+}
+
+.return-button {
+    text-decoration: none;
+    color: initial;
+    background-color: #0000A4;
+    color: white;
+    border-radius: 20px;
+    width: 190px;
+    height: 25px;
+    font-weight: bold;
+}
+
+.return-button:hover {
+    cursor: pointer;
+    background-color: white;
+    color: #0000A4;
+    border: solid 2px #0000A4;
+}

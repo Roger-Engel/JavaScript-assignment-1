@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav>
+        <img id="logo" src="images/rogercomwhite.png">
+    </nav>
+    <div id="userlist">
+
+    </div>
+
+    <div class="addButtonImageScale">
+        <button class="open-button" onclick="openForm()"><img src="images/plus.png" id="addButtonImage"></button>
+    </div>
+
+    <div class="popupOverlay">
+        <div class="form-popup" id="myForm">
+            <form class="form-container" onsubmit="saveFormData()">
+                <h2>Registratie persoonsgegevens</h2>
+                <div class="adress-data2">
+                    <div class="postalcode">
+                        <input type="text" id="postalcodeInput" name="postalcodeInput" placeholder="Postcode">
+                    </div>
+
+                    <div class="houseNumber">
+                        <input type="number" id="houseNumberInput" name="houseNumberInput" placeholder="Huisnummer">
+                    </div>
+                    <div class="addition">
+                        <input type="text" id="additionInput" name="additionInput" placeholder="Toevoeging">
+                    </div>
+                </div>
+
+                <div class="adress-data">
+                    <div class="city">
+                        <input type="text" id="cityInput" name="cityInput" placeholder="Plaats">
+                    </div>
+
+                    <div class="streetName">
+                        <input type="text" id="streetNameInput" name="streetNameInput" placeholder="Straatnaam">
+                    </div>
+
+                </div>
+
+                <div class="name-data">
+                    <div class="firstName">
+                        <input type="text" id="firstNameInput" name="firstNameInput" placeholder="Voornaam">
+                    </div>
+                    <div class="infix">
+                        <input type="text" id="infixInput" name="infixInput" placeholder="Tussenvoegsel">
+                    </div>
+                    <div class="lastName">
+                        <input type="text" id="lastNameInput" name="lastNameInput" placeholder="Achternaam">
+                    </div>
+                </div>
+
+
+                <div class="submit-button">
+                    <button type="submit" class="btn submit" id="verzendenButton">Verzenden</button>
+                    <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+                </div>
+
+                <div id="msg"></div>
+            </form>
+        </div>
+    </div>
+
+
+
+</body>
+<script type="text/javascript" src="script.js"></script>
+
+</html>
