@@ -94,9 +94,6 @@ function displayUserData() {
     });
 }
 
-
-displayUserData();
-
 function viewUserDetails(index) {
     // navigate to detail page on clicking the button
     window.location.href = `detail.html?index=${index}`;
@@ -136,3 +133,5 @@ function editUser(index) {
         isEditMode = true;
     }
 }
+
+displayUserData();

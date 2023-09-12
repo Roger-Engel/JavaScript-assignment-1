@@ -155,17 +155,13 @@ input {
 .form-popup {
     display: none;
     position: fixed;
-    bottom: 0;
-    right: 15px;
     z-index: 9;
-    margin-bottom: 400px;
-    margin-right: 120px;
 }
 
 /* Add styles to the form container */
 .form-container {
     background-color: white;
-    width: 750px;
+    padding: 20px;
 }
 
 
@@ -306,8 +302,10 @@ table {
     width: 100%;
     height: 100%;
     z-index: 999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-
 
 .return-button {
     text-decoration: none;
