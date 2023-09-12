@@ -1,17 +1,28 @@
+let isEditMode = false;
+let editIndex = -1;
+
 // Popup-form
 function openForm() {
     document.getElementById("myForm").style.display = "block";
     document.querySelector(".popupOverlay").classList.add("active");
+
+    isEditMode = false;
 }
 
 function closeForm() {
     document.getElementById("myForm").style.display = "none";
     document.querySelector(".popupOverlay").classList.remove("active");
+
+    // Clear the form fields when closing form
+    document.getElementById("postalcodeInput").value = "";
+    document.getElementById("houseNumberInput").value = "";
+    document.getElementById("additionInput").value = "";
+    document.getElementById("cityInput").value = "";
+    document.getElementById("streetNameInput").value = "";
+    document.getElementById("firstNameInput").value =  "";
+    document.getElementById("infixInput").value = "";
+    document.getElementById("lastNameInput").value = "";
 }
-
-let isEditMode = false; // Declare the isEditMode variable
-let editIndex = -1;
-
 
 // Save's the users data to the local storage
 const saveFormData = () => {
@@ -38,10 +49,8 @@ const saveFormData = () => {
 
     localStorage.setItem("formDataArray", JSON.stringify(formDataArray));
 
-    // Close the form
     closeForm();
 
-    // Reset edit mode to false
     isEditMode = false;
 
     // Refresh the user list
@@ -69,19 +78,18 @@ function displayUserData() {
         // Create the "Bewerken" button
         const editButton = document.createElement('button');
         editButton.className = 'edit-button';
-        editButton.innerHTML = '<img src="images/pen.png" alt="Bewerken Icon" id="edit-icon" />';
+        editButton.innerHTML = '<img src="images/pen.png" alt="Bewerken Icon" class="edit-icon"/>';
         editButton.onclick = () => editUser(index);
         
         // Create the "Verwijderen" button
         const deleteButton = document.createElement('button');
         deleteButton.className = 'delete-button';
-        deleteButton.innerHTML = '<img src="images/delete.png" alt="Verwijderen Icon" id="delete-icon" />';
+        deleteButton.innerHTML = '<img src="images/delete.png" alt="Verwijderen Icon" class="delete-icon" />';
         deleteButton.onclick = () => removeUser(index);
         
         // Append the buttons to the userItem
         userItem.appendChild(editButton);
         userItem.appendChild(deleteButton);
-
         userlist.appendChild(userItem);
     });
 }
@@ -90,7 +98,7 @@ function displayUserData() {
 displayUserData();
 
 function viewUserDetails(index) {
-    // navigate to detail page onclicking the name
+    // navigate to detail page on clicking the button
     window.location.href = `detail.html?index=${index}`;
 }
 
@@ -123,7 +131,6 @@ function editUser(index) {
 
         editIndex = index;
 
-        // Show the form for editing
         openForm();
 
         isEditMode = true;

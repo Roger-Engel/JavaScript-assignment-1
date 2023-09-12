@@ -109,75 +109,16 @@ nav {
     margin-right: 15px;
 }
 
-
-#firstNameInput {
+.form-fields
+{
     box-sizing: border-box;
     border: none;
     border-bottom: 2px solid black;
-}
-
-#additionInput {
-    box-sizing: border-box;
-    border: none;
-    border-bottom: 2px solid black;
-}
-
-#lastNameInput {
-    box-sizing: border-box;
-    border: none;
-    border-bottom: 2px solid black;
-}
-
-#streetNameInput {
-    background-color: #f0f6ff;
-    border: none;
-    height: 30px;
-}
-
-#houseNumberInput {
-    box-sizing: border-box;
-    border: none;
-    border-bottom: 2px solid black;
-}
-
-#infixInput {
-    box-sizing: border-box;
-    border: none;
-    border-bottom: 2px solid black;
-}
-
-#postalcodeInput {
-    box-sizing: border-box;
-    border: none;
-    border-bottom: 2px solid black;
-}
-
-#cityInput {
-    background-color: #f0f6ff;
-    height: 30px;
-    border: none;
-}
-
-#btn {
-    color: white;
-    background-color: #0000ff;
-    margin-bottom: 15px;
 }
 
 .acties {
     color: white;
     background-color: #0000ff;
-}
-
-#addPerson {
-    height: 25px;
-    width: 25px;
-    margin-top: 22px;
-    margin-left: 10px;
-}
-
-#addPerson:hover {
-    cursor: pointer;
 }
 
 .addPersons {
@@ -186,7 +127,7 @@ nav {
     justify-content: center;
 }
 
-#logo {
+.logo {
     display: flex;
     width: 200px;
     height: 40px;
@@ -274,7 +215,7 @@ button {
     opacity: 1;
 }
 
-#addButtonImage {
+.addButtonImage {
     width: 40px;
     height: 40px;
 }
@@ -285,22 +226,29 @@ table {
     margin: 150px;
 }
 
-#userlist {
+.userlist {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
 }
 
 .user-item {
+    display: flex;
+    justify-content: center;
     border: 1px solid #ccc;
     padding: 10px;
     width: calc(33.33% - 7px);
     box-sizing: border-box;
+
 }
 
 .addButtonImageScale {
     display: flex;
     justify-content: center;
+}
+
+.name-item {
+    margin-right: 100px;
 }
 
 .name-item:hover {
@@ -323,7 +271,7 @@ table {
     cursor: pointer;
 }
 
-#user-details {
+.user-details {
     border: solid;
     border-color: black;
     border-radius: 10px;
@@ -332,20 +280,21 @@ table {
     height: 235px;
 }
 
-#edit-icon {
+.edit-icon {
     width: 40px;
     height: 40px;
-    margin-right: 20px;
+    padding: 5px;
 }
 
-#edit-icon:hover img.pen-hoverd {
-    opacity: 1;
+.edit-icon:hover {
+    border: solid 1px black;
+    border-radius: 5px;
+    background-color: #0000A4;
 }
 
-#delete-icon {
+.delete-icon {
     width: 40px;
     height: 40px;
-    margin-left: 20px;
 }
 
 .popupOverlay.active {
@@ -359,9 +308,6 @@ table {
     z-index: 999;
 }
 
-#user-nameInfo {
-    font-weight: 1000px;
-}
 
 .return-button {
     text-decoration: none;
