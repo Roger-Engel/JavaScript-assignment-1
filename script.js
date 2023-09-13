@@ -34,22 +34,30 @@ function closeForm() {
     document.getElementById("additionInput").value = "";
     document.getElementById("cityInput").value = "";
     document.getElementById("streetNameInput").value = "";
-    document.getElementById("firstNameInput").value =  "";
+    document.getElementById("firstNameInput").value = "";
     document.getElementById("infixInput").value = "";
     document.getElementById("lastNameInput").value = "";
 }
 
 // Save's the users data to the local storage
 function saveFormData() {
+    function capitalizeFirstLetter(str) {
+        return str.charAt(0).toUpperCase() + str.slice(1);
+    };
+
+    const postalcodeInput = document.getElementById("postalcodeInput").value;
+    const postalCodeNumbers = postalcodeInput.slice(0, 4);
+    const postalCodeLetters = postalcodeInput.slice(4).toUpperCase();
+
     const formData = new Person(
-        document.getElementById("firstNameInput").value,
+        capitalizeFirstLetter(document.getElementById("firstNameInput").value),
         document.getElementById("infixInput").value,
-        document.getElementById("lastNameInput").value,
-        document.getElementById("postalcodeInput").value,
+        capitalizeFirstLetter(document.getElementById("lastNameInput").value),
+        postalCodeNumbers + postalCodeLetters,
         document.getElementById("houseNumberInput").value,
         document.getElementById("additionInput").value,
-        document.getElementById("cityInput").value,
-        document.getElementById("streetNameInput").value
+        capitalizeFirstLetter(document.getElementById("cityInput").value),
+        capitalizeFirstLetter(document.getElementById("streetNameInput").value)
     )
 
     const formDataArray = JSON.parse(localStorage.getItem("formDataArray")) || [];
@@ -84,24 +92,30 @@ function displayUserData() {
 
         const userInfo = document.createElement('div');
         userInfo.className = 'user-info';
-        
+
         const nameElement = document.createElement('h2');
         nameElement.className = 'name-item';
         nameElement.textContent = `${formData.firstName} ${formData.infix || ''} ${formData.lastName}`;
         nameElement.onclick = () => viewUserDetails(index);
-        
+
         userItem.appendChild(nameElement);
-        
+
+        const infoButton = document.createElement('button');
+        infoButton.className = 'info-button';
+        infoButton.innerHTML = '<img src="images/info.png" alt="Info Icon" class="info-icon"/>';
+        infoButton.onclick = () => viewUserDetails(index);
+
         const editButton = document.createElement('button');
         editButton.className = 'edit-button';
-        editButton.innerHTML = '<img src="images/pen.png" alt="Bewerken Icon" class="edit-icon"/>';
+        editButton.innerHTML = '<img src="images/circel-pen.png" alt="Bewerken Icon" class="edit-icon"/>';
         editButton.onclick = () => editUser(index);
-        
+
         const deleteButton = document.createElement('button');
         deleteButton.className = 'delete-button';
-        deleteButton.innerHTML = '<img src="images/delete.png" alt="Verwijderen Icon" class="delete-icon" />';
+        deleteButton.innerHTML = '<img src="images/circel-delete.png" alt="Verwijderen Icon" class="delete-icon" />';
         deleteButton.onclick = () => removeUser(index);
-        
+
+        userInfo.appendChild(infoButton);
         userInfo.appendChild(editButton);
         userInfo.appendChild(deleteButton);
 
