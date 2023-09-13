@@ -12,53 +12,67 @@
     <nav>
         <img class="logo" src="images/rogercomwhite.png">
     </nav>
-    <div class="userlist" id="userlist">
 
+    <div class="container">
+        <div class="userlist" id="userlist">
+            
+        </div>
+
+        <div class="addButtonImageScale">
+            <button class="open-button" onclick="openForm()"><img src="images/plus.png" class="addButtonImage"></button>
+        </div>
     </div>
 
-    <div class="addButtonImageScale">
-        <button class="open-button" onclick="openForm()"><img src="images/plus.png" class="addButtonImage"></button>
-    </div>
 
     <div class="popupOverlay">
         <div class="form-popup" id="myForm">
             <form class="form-container" onsubmit="saveFormData()">
                 <h2>Registratie persoonsgegevens</h2>
+
+                <div class="name-data">
+                    <div class="firstName">
+                        <input type="text" class="form-fields" id="firstNameInput" name="firstNameInput"
+                            placeholder="Voornaam" required>
+                    </div>
+                    <div class="infix">
+                        <input type="text" class="form-fields" id="infixInput" name="infixInput"
+                            placeholder="Tussenvoegsel">
+                    </div>
+                    <div class="lastName">
+                        <input type="text" class="form-fields" id="lastNameInput" name="lastNameInput"
+                            placeholder="Achternaam" required>
+                    </div>
+                </div>
+
                 <div class="adress-data2">
                     <div class="postalcode">
-                        <input type="text" class="form-fields" id="postalcodeInput" name="postalcodeInput" placeholder="Postcode">
+                        <input type="text" class="form-fields" id="postalcodeInput" name="postalcodeInput"
+                            placeholder="Postcode" required>
                     </div>
 
                     <div class="houseNumber">
-                        <input type="number" class="form-fields" id="houseNumberInput" name="houseNumberInput" placeholder="Huisnummer">
+                        <input type="number" class="form-fields" id="houseNumberInput" name="houseNumberInput"
+                            placeholder="Huisnummer" required>
                     </div>
                     <div class="addition">
-                        <input type="text" class="form-fields" id="additionInput" name="additionInput" placeholder="Toevoeging">
+                        <input type="text" class="form-fields" id="additionInput" name="additionInput"
+                            placeholder="Toevoeging">
                     </div>
                 </div>
 
                 <div class="adress-data">
                     <div class="city">
-                        <input type="text" class="form-fields" id="cityInput" name="cityInput" placeholder="Plaats">
+                        <input type="text" class="form-fields" id="cityInput" name="cityInput" placeholder="Plaats" required>
                     </div>
 
                     <div class="streetName">
-                        <input type="text" class="form-fields" id="streetNameInput" name="streetNameInput" placeholder="Straatnaam">
+                        <input type="text" class="form-fields" id="streetNameInput" name="streetNameInput"
+                            placeholder="Straatnaam" required>
                     </div>
 
                 </div>
 
-                <div class="name-data">
-                    <div class="firstName">
-                        <input type="text" class="form-fields" id="firstNameInput" name="firstNameInput" placeholder="Voornaam">
-                    </div>
-                    <div class="infix">
-                        <input type="text" class="form-fields" id="infixInput" name="infixInput" placeholder="Tussenvoegsel">
-                    </div>
-                    <div class="lastName">
-                        <input type="text" class="form-fields" id="lastNameInput" name="lastNameInput" placeholder="Achternaam">
-                    </div>
-                </div>
+
 
 
                 <div class="submit-button">

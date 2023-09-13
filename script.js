@@ -1,6 +1,21 @@
 let isEditMode = false;
 let editIndex = -1;
 
+displayUserData();
+
+class Person {
+    constructor(firstName, infix, lastName, postalCode, houseNumber, addition, city, streetName) {
+        this.firstName = firstName;
+        this.infix = infix;
+        this.lastName = lastName;
+        this.postalCode = postalCode;
+        this.houseNumber = houseNumber;
+        this.addition = addition;
+        this.city = city;
+        this.streetName = streetName;
+    }
+}
+
 // Popup-form
 function openForm() {
     document.getElementById("myForm").style.display = "block";
@@ -25,17 +40,17 @@ function closeForm() {
 }
 
 // Save's the users data to the local storage
-const saveFormData = () => {
-    const formData = {
-        postalCode: document.getElementById("postalcodeInput").value,
-        houseNumber: document.getElementById("houseNumberInput").value,
-        addition: document.getElementById("additionInput").value,
-        city: document.getElementById("cityInput").value,
-        streetName: document.getElementById("streetNameInput").value,
-        firstName: document.getElementById("firstNameInput").value,
-        infix: document.getElementById("infixInput").value,
-        lastName: document.getElementById("lastNameInput").value,
-    };
+function saveFormData() {
+    const formData = new Person(
+        document.getElementById("firstNameInput").value,
+        document.getElementById("infixInput").value,
+        document.getElementById("lastNameInput").value,
+        document.getElementById("postalcodeInput").value,
+        document.getElementById("houseNumberInput").value,
+        document.getElementById("additionInput").value,
+        document.getElementById("cityInput").value,
+        document.getElementById("streetNameInput").value
+    )
 
     const formDataArray = JSON.parse(localStorage.getItem("formDataArray")) || [];
 
@@ -66,8 +81,10 @@ function displayUserData() {
     formDataArray.forEach((formData, index) => {
         const userItem = document.createElement('div');
         userItem.className = 'user-item';
+
+        const userInfo = document.createElement('div');
+        userInfo.className = 'user-info';
         
-        // Wrap the name in a <p> tag with an onclick event
         const nameElement = document.createElement('h2');
         nameElement.className = 'name-item';
         nameElement.textContent = `${formData.firstName} ${formData.infix || ''} ${formData.lastName}`;
@@ -75,21 +92,23 @@ function displayUserData() {
         
         userItem.appendChild(nameElement);
         
-        // Create the "Bewerken" button
         const editButton = document.createElement('button');
         editButton.className = 'edit-button';
         editButton.innerHTML = '<img src="images/pen.png" alt="Bewerken Icon" class="edit-icon"/>';
         editButton.onclick = () => editUser(index);
         
-        // Create the "Verwijderen" button
         const deleteButton = document.createElement('button');
         deleteButton.className = 'delete-button';
         deleteButton.innerHTML = '<img src="images/delete.png" alt="Verwijderen Icon" class="delete-icon" />';
         deleteButton.onclick = () => removeUser(index);
         
-        // Append the buttons to the userItem
-        userItem.appendChild(editButton);
-        userItem.appendChild(deleteButton);
+        userInfo.appendChild(editButton);
+        userInfo.appendChild(deleteButton);
+
+        // Append the userInfo div to the userItem div
+        userItem.appendChild(userInfo);
+
+        // Append the userItem to the userlist
         userlist.appendChild(userItem);
     });
 }
@@ -134,4 +153,3 @@ function editUser(index) {
     }
 }
 
-displayUserData();

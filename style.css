@@ -9,6 +9,7 @@ body {
     justify-content: center;
     flex-direction: column;
     text-align: center;
+    padding: 50px;
 }
 
 table {
@@ -29,7 +30,7 @@ table {
     flex-direction: row;
     margin-bottom: 20px;
     margin-top: 20px;
-    justify-content: center;
+    justify-content: space-around;
     font-weight: 760;
 }
 
@@ -40,14 +41,15 @@ table {
     margin-top: 20px;
     justify-content: center;
     font-weight: 760;
+    margin-left: 25px;
+    margin-right: 25px;
 }
 
 .adress-data2 {
     display: flex;
     flex-direction: row;
     margin-bottom: 20px;
-    margin-top: 20px;
-    justify-content: center;
+    justify-content: space-around;
     font-weight: 760;
 }
 
@@ -78,15 +80,8 @@ nav {
 .streetName {
     display: flex;
     flex-direction: column;
-    margin-right: 15px;
     margin-bottom: 1px;
-    margin-left: 100px;
-    margin-right: 100px;
-}
 
-.houseNumber {
-    display: flex;
-    flex-direction: column;
 }
 
 .addition {
@@ -99,8 +94,6 @@ nav {
     display: flex;
     flex-direction: column;
     margin-bottom: 15px;
-    margin-left: 100px;
-    margin-right: 100px;
 }
 
 .postalcode {
@@ -114,11 +107,6 @@ nav {
     box-sizing: border-box;
     border: none;
     border-bottom: 2px solid black;
-}
-
-.acties {
-    color: white;
-    background-color: #0000ff;
 }
 
 .addPersons {
@@ -162,12 +150,15 @@ input {
 .form-container {
     background-color: white;
     padding: 20px;
+    width: 700px;
+    height: 300px;
 }
 
 
 /* When the inputs get focus, do something */
 .form-container input[type=text]:focus,
-.form-container input[type=password]:focus {
+.form-container input[type=password]:focus,
+.form-container input[type=number]:focus {
     background-color: #ddd;
     outline: none;
 }
@@ -197,7 +188,7 @@ input {
     background-color: #0000A4;
     width: 175px;
     border-radius: 20px;
-    margin-right: 10px;
+    margin-top: 20px;
 }
 
 button {
@@ -230,7 +221,8 @@ table {
 
 .user-item {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    order: -2;
     border: 1px solid #ccc;
     padding: 10px;
     width: calc(33.33% - 7px);
@@ -243,12 +235,13 @@ table {
     justify-content: center;
 }
 
-.name-item {
-    margin-right: 100px;
-}
-
 .name-item:hover {
+    background-color: rgba(0, 0, 164,.8);
+    border: 1px solid black;
+    border-radius: 25px;
     cursor: pointer;
+    padding-left: 3px;
+    padding-right: 3px;
 }
 
 .edit-button {
@@ -277,20 +270,32 @@ table {
 }
 
 .edit-icon {
-    width: 40px;
-    height: 40px;
+    width: 35px;
+    height: 35px;
     padding: 5px;
 }
 
 .edit-icon:hover {
     border: solid 1px black;
-    border-radius: 5px;
+    border-radius: 50px;
     background-color: #0000A4;
 }
 
 .delete-icon {
-    width: 40px;
-    height: 40px;
+    width: 35px;
+    height: 35px;
+    padding: 5px;
+}
+
+.delete-icon:hover {
+    border: solid 1px black;
+    border-radius: 50px;
+    background-color: #0000A4;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
 }
 
 .popupOverlay.active {
