@@ -7,7 +7,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const formDataArray = JSON.parse(localStorage.getItem('formDataArray')) || [];
     const userData = formDataArray[index];
 
-    // Toont de gebruikersgegevens op de detailpagina
     const userInfoName = document.getElementById("user-nameInfo");
     const userInfoPlace = document.getElementById("user-PlaceInfo");
     const userInfoStreetName = document.getElementById("user-StreetNameInfo");

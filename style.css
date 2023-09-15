@@ -109,6 +109,10 @@ nav {
     border-bottom: 2px solid black;
 }
 
+.form-fields:hover {
+    background-color: #ddd;
+}
+
 .addPersons {
     display: flex;
     flex-direction: row;
@@ -139,14 +143,11 @@ input {
     margin-right: 20px;
 }
 
-/* The popup form - hidden by default */
 .form-popup {
     display: none;
     position: fixed;
-    z-index: 9;
 }
 
-/* Add styles to the form container */
 .form-container {
     background-color: white;
     padding: 20px;
@@ -154,8 +155,6 @@ input {
     height: 300px;
 }
 
-
-/* When the inputs get focus, do something */
 .form-container input[type=text]:focus,
 .form-container input[type=password]:focus,
 .form-container input[type=number]:focus {
@@ -163,9 +162,7 @@ input {
     outline: none;
 }
 
-/* Set a style for the submit/login button */
 .form-container .btn {
-    background-color: #04AA6D;
     color: white;
     padding: 16px 20px;
     border: none;
@@ -175,20 +172,37 @@ input {
     opacity: 0.8;
 }
 
-/* Add a red background color to the cancel button */
 .form-container .cancel {
     background-color: red;
     width: 175px;
     border-radius: 20px;
-    margin-left: 10px;
+    margin-top: 20px;
+    margin-left: 20px;
+    border:  2px solid red;
 }
 
+.form-container .cancel:hover {
+    background-color: white;
+    border:  2px solid red;
+    width: 175px;
+    border-radius: 20px;
+    color: black;
+}
 
 .form-container .submit {
     background-color: #0000A4;
     width: 175px;
     border-radius: 20px;
     margin-top: 20px;
+    margin-left: 20px;
+    border: 2px solid #0000A4;
+}
+
+.form-container .submit:hover {
+    background-color: white;
+    border: 2px solid #0000A4;
+    color: black;
+    border-radius: 20px;
 }
 
 button {
@@ -205,6 +219,11 @@ button {
 .addButtonImage {
     width: 40px;
     height: 40px;
+}
+
+.addButtonImage:hover {
+    background-color: rgba(0, 0, 164,.65);
+    border-radius: 50px;
 }
 
 table {
@@ -252,17 +271,20 @@ table {
     border: solid;
     border-color: black;
     border-radius: 10px;
-    margin-left: 450px;
-    margin-right: 450px;
-    height: 235px;
+    margin-left: 550px;
+    margin-right: 550px;
+    height: 240px;
 }
 
 .info-icon {
     width: 35px;
     height: 35px;
+    border: solid 1px black;
+    border-radius: 50px;
 }
 
 .info-icon:hover {
+    border: solid 1px black;
     border-radius: 50px;
     background-color: rgba(0, 0, 164,.65);
     cursor: pointer;
@@ -271,6 +293,8 @@ table {
 .edit-icon {
     width: 35px;
     height: 35px;
+    border: solid 1px black;
+    border-radius: 50px;
 }
 
 .edit-icon:hover {
@@ -282,6 +306,8 @@ table {
 .delete-icon {
     width: 35px;
     height: 35px;
+    border: solid 1px black;
+    border-radius: 50px;
 }
 
 .delete-icon:hover {
@@ -311,18 +337,21 @@ table {
 
 .return-button {
     text-decoration: none;
-    color: initial;
     background-color: #0000A4;
     color: white;
     border-radius: 20px;
-    width: 190px;
-    height: 25px;
+    width: 220px;
+    height: 35px;
     font-weight: bold;
 }
 
 .return-button:hover {
     cursor: pointer;
     background-color: white;
-    color: #0000A4;
+    color: black;
     border: solid 2px #0000A4;
+}
+
+.tekst-details {
+    font-weight: bold;
 }

@@ -16,7 +16,6 @@ class Person {
     }
 }
 
-// Popup-form
 function openForm() {
     document.getElementById("myForm").style.display = "block";
     document.querySelector(".popupOverlay").classList.add("active");
@@ -28,7 +27,6 @@ function closeForm() {
     document.getElementById("myForm").style.display = "none";
     document.querySelector(".popupOverlay").classList.remove("active");
 
-    // Clear the form fields when closing form
     document.getElementById("postalcodeInput").value = "";
     document.getElementById("houseNumberInput").value = "";
     document.getElementById("additionInput").value = "";
@@ -39,7 +37,6 @@ function closeForm() {
     document.getElementById("lastNameInput").value = "";
 }
 
-// Save's the users data to the local storage
 function saveFormData() {
     function capitalizeFirstLetter(str) {
         return str.charAt(0).toUpperCase() + str.slice(1);
@@ -63,10 +60,8 @@ function saveFormData() {
     const formDataArray = JSON.parse(localStorage.getItem("formDataArray")) || [];
 
     if (isEditMode) {
-        // If in edit mode, update the existing data
         formDataArray[editIndex] = formData;
     } else {
-        // If not in edit mode, add new data
         formDataArray.push(formData);
     }
 
@@ -76,11 +71,9 @@ function saveFormData() {
 
     isEditMode = false;
 
-    // Refresh the user list
     displayUserData();
 };
 
-// Makes an information column with edit and delete button for each person that is added
 function displayUserData() {
     const formDataArray = JSON.parse(localStorage.getItem('formDataArray')) || [];
     const userlist = document.getElementById('userlist');
@@ -119,16 +112,13 @@ function displayUserData() {
         userInfo.appendChild(editButton);
         userInfo.appendChild(deleteButton);
 
-        // Append the userInfo div to the userItem div
         userItem.appendChild(userInfo);
 
-        // Append the userItem to the userlist
         userlist.appendChild(userItem);
     });
 }
 
 function viewUserDetails(index) {
-    // navigate to detail page on clicking the button
     window.location.href = `detail.html?index=${index}`;
 }
 
@@ -136,9 +126,9 @@ function removeUser(index) {
     const formDataArray = JSON.parse(localStorage.getItem('formDataArray')) || [];
 
     if (index >= 0 && index < formDataArray.length) {
-        formDataArray.splice(index, 1); // Remove the user at the specified index
-        localStorage.setItem('formDataArray', JSON.stringify(formDataArray)); // Update Local Storage
-        displayUserData(); // Refresh the user list
+        formDataArray.splice(index, 1);
+        localStorage.setItem('formDataArray', JSON.stringify(formDataArray));
+        displayUserData();
     }
 }
 
@@ -149,7 +139,6 @@ function editUser(index) {
     if (index >= 0 && index < formDataArray.length) {
         const userData = formDataArray[index];
 
-        // Populate the form fields with the user's data
         document.getElementById("postalcodeInput").value = userData.postalCode;
         document.getElementById("houseNumberInput").value = userData.houseNumber;
         document.getElementById("additionInput").value = userData.addition;
