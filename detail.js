@@ -1,9 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // Get the queryparameter "index" from the url
     const urlParams = new URLSearchParams(window.location.search);
     const index = parseInt(urlParams.get("index"));
 
-    // Haal de gebruikersgegevens op uit de localStorage
     const formDataArray = JSON.parse(localStorage.getItem('formDataArray')) || [];
     const userData = formDataArray[index];
 
