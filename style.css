@@ -258,15 +258,6 @@ table {
     cursor: pointer;
 }
 
-.edit-button:hover {
-    cursor: pointer;
-}
-
-
-.delete-button:hover {
-    cursor: pointer;
-}
-
 .user-details {
     border: solid;
     border-color: black;
@@ -274,46 +265,21 @@ table {
     margin-left: 550px;
     margin-right: 550px;
     height: 240px;
+    font-weight: bold;
 }
 
-.info-icon {
+.icons {
     width: 35px;
     height: 35px;
     border: solid 1px black;
     border-radius: 50px;
 }
 
-.info-icon:hover {
+.icons:hover {
     border: solid 1px black;
     border-radius: 50px;
     background-color: rgba(0, 0, 164,.65);
     cursor: pointer;
-}
-
-.edit-icon {
-    width: 35px;
-    height: 35px;
-    border: solid 1px black;
-    border-radius: 50px;
-}
-
-.edit-icon:hover {
-    border: solid 1px black;
-    border-radius: 50px;
-    background-color: rgba(0, 0, 164,.65);
-}
-
-.delete-icon {
-    width: 35px;
-    height: 35px;
-    border: solid 1px black;
-    border-radius: 50px;
-}
-
-.delete-icon:hover {
-    border: solid 1px black;
-    border-radius: 50px;
-    background-color: rgba(0, 0, 164,.65);
 }
 
 .user-info {
@@ -349,8 +315,4 @@ table {
     background-color: white;
     color: black;
     border: solid 2px #0000A4;
-}
-
-.tekst-details {
-    font-weight: bold;
 }

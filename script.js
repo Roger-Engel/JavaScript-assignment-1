@@ -95,17 +95,17 @@ function displayUserData() {
 
         const infoButton = document.createElement('button');
         infoButton.className = 'info-button';
-        infoButton.innerHTML = '<img src="images/info.png" alt="Info Icon" class="info-icon"/>';
+        infoButton.innerHTML = '<img src="images/info.png" alt="Info Icon" class="icons"/>';
         infoButton.onclick = () => viewUserDetails(index);
 
         const editButton = document.createElement('button');
         editButton.className = 'edit-button';
-        editButton.innerHTML = '<img src="images/circel-pen.png" alt="Bewerken Icon" class="edit-icon"/>';
+        editButton.innerHTML = '<img src="images/circel-pen.png" alt="Bewerken Icon" class="icons"/>';
         editButton.onclick = () => editUser(index);
 
         const deleteButton = document.createElement('button');
         deleteButton.className = 'delete-button';
-        deleteButton.innerHTML = '<img src="images/circel-delete.png" alt="Verwijderen Icon" class="delete-icon" />';
+        deleteButton.innerHTML = '<img src="images/circel-delete.png" alt="Verwijderen Icon" class="icons" />';
         deleteButton.onclick = () => removeUser(index);
 
         userInfo.appendChild(infoButton);
@@ -155,4 +155,3 @@ function editUser(index) {
         isEditMode = true;
     }
 }
-
